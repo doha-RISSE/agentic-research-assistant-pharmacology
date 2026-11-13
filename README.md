@@ -3,6 +3,9 @@
 Agent Python de recherche sur un corpus local, construit avec FastAPI et LangGraph. Il répond uniquement à partir des chunks fournis, affiche les fichiers sources et ajoute systématiquement un avertissement médical. Le frontend React est compilé depuis `web/` et servi par la même API FastAPI : aucune seconde application ou URL n’est nécessaire.
 
 ## Architecture
+Pour une présentation détaillée de la conception et de l'implémentation du système, consultez le document d'architecture technique ci-dessous.
+
+**[Consulter le document d'architecture technique (PDF)](docs/architecture/Architecture-en-detail.pdf)**
 
 `Scope (LLM) → Plan (LLM) → sélection dynamique des outils (LLM tool calling) → retrieval → Generator (LLM) → Critic (LLM) → réponse`
 
