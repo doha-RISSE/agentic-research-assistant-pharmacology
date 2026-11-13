@@ -1,0 +1,213 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  }
+}
+
+.font-jakarta {
+  font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+}
+
+.font-outfit {
+  font-family: "Outfit", system-ui, sans-serif;
+}
+
+.font-fraunces {
+  font-family: "Fraunces", Georgia, serif;
+}
+
+.font-bricolage {
+  font-family: "Bricolage Grotesque", system-ui, sans-serif;
+}
+
+.font-source-serif {
+  font-family: "Source Serif 4", Georgia, serif;
+}
+
+.font-dm {
+  font-family: "DM Sans", system-ui, sans-serif;
+}
+
+.font-mono-code {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+@keyframes shimmer-sweep {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(200%);
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer-sweep 3.4s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+}
+
+/* Proposal 01: Material Aesthetics — Glassmorphism + Neumorphism + Liquid Glass */
+.neu-glass-card {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(16px) saturate(145%);
+  -webkit-backdrop-filter: blur(16px) saturate(145%);
+  border: 1.5px solid rgba(255, 255, 255, 0.9);
+  box-shadow:
+    0 20px 48px -12px rgba(99, 102, 241, 0.14),
+    0 8px 24px -8px rgba(15, 23, 42, 0.08),
+    inset 0 1.5px 2px rgba(255, 255, 255, 0.98),
+    inset 0 -1px 2px rgba(199, 210, 254, 0.35);
+}
+
+.neu-inset-well {
+  background: rgba(240, 242, 248, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow:
+    inset 4px 4px 9px rgba(148, 163, 184, 0.22),
+    inset -4px -4px 9px rgba(255, 255, 255, 0.96);
+}
+
+.neu-soft-btn {
+  background: linear-gradient(145deg, #ffffff, #f2f4fa);
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  box-shadow:
+    6px 8px 18px rgba(136, 148, 175, 0.18),
+    -5px -5px 14px rgba(255, 255, 255, 0.98),
+    inset 0 1px 1px rgba(255, 255, 255, 1);
+}
+
+.neu-soft-btn:hover {
+  background: linear-gradient(145deg, #ffffff, #f8f9fd);
+  box-shadow:
+    8px 10px 22px rgba(129, 140, 248, 0.2),
+    -6px -6px 16px rgba(255, 255, 255, 1),
+    inset 0 1px 1px rgba(255, 255, 255, 1);
+}
+
+.neu-soft-btn:active {
+  box-shadow:
+    inset 3px 3px 7px rgba(148, 163, 184, 0.25),
+    inset -3px -3px 7px rgba(255, 255, 255, 0.95);
+}
+
+.neu-primary-btn {
+  background: linear-gradient(135deg, #9894c3 0%, #4f46e5 52%, #2563eb 100%);
+  border: 1px solid rgba(255, 255, 255, 0.42);
+  box-shadow:
+    0 10px 24px -4px rgba(79, 70, 229, 0.42),
+    -4px -4px 12px rgba(255, 255, 255, 0.9),
+    inset 0 1.5px 2px rgba(255, 255, 255, 0.45);
+}
+
+.neu-primary-btn:hover {
+  background: linear-gradient(135deg, #4f46e5 0%, #6366f1 52%, #3b82f6 100%);
+  box-shadow:
+    0 14px 28px -4px rgba(79, 70, 229, 0.5),
+    -4px -4px 12px rgba(255, 255, 255, 0.95),
+    inset 0 1.5px 2px rgba(255, 255, 255, 0.55);
+}
+
+.neu-primary-btn:active {
+  box-shadow:
+    inset 3px 3px 8px rgba(30, 27, 75, 0.4),
+    inset -2px -2px 6px rgba(165, 180, 252, 0.3);
+}
+
+/* Liquid Glass Iridescent Preparation Effect */
+.liquid-glass-shell {
+  position: relative;
+  background:
+    radial-gradient(circle at 12% 20%, rgba(125, 211, 252, 0.42) 0%, transparent 52%),
+    radial-gradient(circle at 52% 48%, rgba(167, 139, 250, 0.34) 0%, transparent 58%),
+    radial-gradient(circle at 88% 72%, rgba(244, 114, 182, 0.42) 0%, transparent 54%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.82) 0%, rgba(245, 247, 255, 0.72) 100%);
+  backdrop-filter: blur(20px) saturate(175%);
+  -webkit-backdrop-filter: blur(20px) saturate(175%);
+  border: 1.5px solid rgba(255, 255, 255, 0.96);
+  box-shadow:
+    0 26px 58px -12px rgba(99, 102, 241, 0.28),
+    0 14px 32px -8px rgba(244, 114, 182, 0.24),
+    inset 0 2px 5px rgba(255, 255, 255, 1),
+    inset 0 -3px 8px rgba(147, 197, 253, 0.42);
+}
+
+.liquid-glass-orb {
+  background:
+    radial-gradient(circle at 26% 26%, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.35) 22%, transparent 50%),
+    radial-gradient(circle at 26% 74%, rgba(56, 189, 248, 0.92) 0%, transparent 58%),
+    radial-gradient(circle at 78% 66%, rgba(244, 114, 182, 0.88) 0%, transparent 58%),
+    radial-gradient(circle at 55% 28%, rgba(167, 139, 250, 0.88) 0%, rgba(199, 210, 254, 0.65) 70%);
+  border: 1.5px solid rgba(255, 255, 255, 0.95);
+  box-shadow:
+    0 14px 30px -6px rgba(99, 102, 241, 0.36),
+    0 10px 24px -6px rgba(244, 114, 182, 0.32),
+    inset 0 2px 5px rgba(255, 255, 255, 1),
+    inset -4px -4px 10px rgba(99, 102, 241, 0.25);
+}
+
+@keyframes liquid-swirl {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1) rotate(0deg);
+  }
+  33% {
+    transform: translate3d(2px, -3px, 0) scale(1.06) rotate(120deg);
+  }
+  66% {
+    transform: translate3d(-2px, 2px, 0) scale(0.97) rotate(240deg);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) scale(1) rotate(360deg);
+  }
+}
+
+@keyframes iridescent-flow {
+  0% {
+    transform: translateX(-35%);
+  }
+  50% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-35%);
+  }
+}
+
+.animate-liquid-swirl {
+  animation: liquid-swirl 12s ease-in-out infinite;
+}
+
+.animate-iridescent-flow {
+  animation: iridescent-flow 6.8s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

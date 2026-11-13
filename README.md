@@ -1,6 +1,6 @@
 # Agent de recherche pharmacologique
 
-Agent Python de recherche sur un corpus local, construit avec FastAPI et LangGraph. Il répond uniquement à partir des chunks fournis, affiche les fichiers sources et ajoute systématiquement un avertissement médical.
+Agent Python de recherche sur un corpus local, construit avec FastAPI et LangGraph. Il répond uniquement à partir des chunks fournis, affiche les fichiers sources et ajoute systématiquement un avertissement médical. Le frontend React est compilé depuis `web/` et servi par la même API FastAPI : aucune seconde application ou URL n’est nécessaire.
 
 ## Architecture
 
@@ -37,6 +37,18 @@ docker run -p 8000:8000 --env-file .env agent
 ```
 
 L’image contient le code, le corpus, le glossaire et `chunks.jsonl`; `.env` est exclu de l’image. L’API runtime ne dépend jamais de Groq.
+
+Le build Docker compile aussi l’interface React incluse dans `web/`, puis place un unique `frontend/index.html` autonome dans l’image. L’interface appelle `POST /ask` sur la même origine : les réponses, sources et disclaimers viennent exclusivement du backend.
+
+### Modifier uniquement l’interface
+
+Le code source du frontend est dans `web/src/`. Le build est déjà exécuté automatiquement par Docker. Pour régénérer la page statique hors Docker lorsque Node/npm est installé :
+
+```bash
+cd web
+npm ci
+npm run build
+```
 
 ## Tests et évaluation
 

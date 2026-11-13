@@ -12,14 +12,14 @@ studied pharmacology. This file ships with Attachment B.
 - **PRN**: Latin "pro re nata", meaning "as needed" rather than scheduled.
 - **OTC**: over-the-counter — available without prescription.
 
-## Pharmacokinetics (what the body does to the drug)
+- **Pharmacokinetics** : what the body does to the drug 
 - **Half-life (t½)**: the time for the drug's plasma concentration to fall by half.
 - **CYP enzymes (e.g. CYP3A4, CYP2D6)**: liver enzymes that metabolize most drugs. Inhibitors raise
   drug levels, inducers lower them. A frequent source of interactions.
 - **First-pass metabolism**: for oral drugs, how much is destroyed by the liver before reaching
   circulation.
 
-## Pharmacodynamics (what the drug does to the body)
+- **Pharmacodynamics** : what the drug does to the body
 - **Mechanism of action (MoA)**: the molecular target and effect (e.g., "COX-1/2 inhibitor").
 - **Agonist / antagonist**: activates / blocks a receptor.
 - **Therapeutic window**: the gap between effective and toxic doses. Narrow for warfarin, wide for
