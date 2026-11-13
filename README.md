@@ -62,3 +62,43 @@ python evals/run.py
 ## Variables
 
 `OPENAI_API_KEY`, `OPENAI_BASE_URL`, `OPENAI_MODEL` et `OPENAI_EMBEDDING_MODEL` sont obligatoires. `SIMILARITY_THRESHOLD` vaut par défaut exactement `0.39726812`; `MAX_CRITIC_ITERATIONS` vaut `2`.
+
+## Use Cases & Demonstrations
+
+The following use cases demonstrate the capabilities and safety mechanisms of the Pharmacological Research Assistant, including pharmacological information retrieval, glossary lookup, scope validation, guardrails, and multi-hop reasoning.
+
+### 1. Pharmacological Information Retrieval
+
+A pharmacological question about a specific medication. The agent retrieves relevant information from the local corpus and generates a source-grounded response.
+
+![Pharmacological Information Retrieval](docs/screenshots/screenshot-01.png)
+
+### 2. Glossary Lookup
+
+A terminology-related query demonstrating the glossary lookup tool, which retrieves definitions of pharmacological terms from the project's local glossary.
+
+![Glossary Lookup](docs/screenshots/screenshot-02.png)
+
+### 3. Out-of-Scope Query
+
+A query outside the pharmacological research domain. The agent identifies that the request is outside its defined scope and applies the appropriate scope-handling behavior.
+
+![Out-of-Scope Query](docs/screenshots/screenshot-03.png)
+
+### 4. Medical Advice Restriction
+
+A request for personalized medical advice. The agent applies its safety guardrails and avoids providing personalized diagnosis or treatment recommendations.
+
+![Medical Advice Restriction](docs/screenshots/screenshot-04.png)
+
+### 5. Guardrails and Prompt Injection Resistance
+
+An attempt to manipulate the agent into ignoring its system instructions or bypassing its safety restrictions. This test demonstrates whether the agent maintains its predefined instructions and security boundaries.
+
+![Guardrails and Prompt Injection Resistance](docs/screenshots/screenshot-05.png)
+
+### 6. Multi-Hop Pharmacological Reasoning
+
+A compound pharmacological question requiring the agent to retrieve and integrate information from multiple sources in the local corpus to generate a coherent, evidence-based response.
+
+![Multi-Hop Pharmacological Reasoning](docs/screenshots/screenshot-06.png)
